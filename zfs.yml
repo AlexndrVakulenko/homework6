@@ -1,0 +1,12 @@
+---
+- name: ZFS_test | Testing ZFS
+  hosts: zfs
+
+  tasks:
+    
+    - name: zpools_create | Create zpools otus1..otus4, set compression
+      ansible.builtin.script: ./zpools_create.sh
+    
+    - name: test_compression
+      ansible.builtin.script: ./test_compression.sh
+
